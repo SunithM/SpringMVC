@@ -1,6 +1,8 @@
 package com.sunith.springmvc;
 
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,12 +56,20 @@ public class HomeController
 		
 	}
 	
+	@GetMapping("getAlienSearch")
+	public String getAlienSearch(@RequestParam int aid,Model m)
+	{
+		m.addAttribute("result", dao.getAlien(aid));
+		return "showAlien";
+	}
+	
 	
 	@RequestMapping("addAlien")
-	public String addAlien(@ModelAttribute Alien a)
+	public String addAlien(@ModelAttribute("result") Alien a)
 	{
-		
-		return "result";
+		dao.addAlien(a);
+		return "showAlien";
 		
 	}
+	
 }

@@ -11,16 +11,17 @@ Welcome to spring MVC
 <br>
 <br>
 
-<form action="addAlien">
-Enter your id: <input type=text name=aid>
-<br>
-<br>
-Enter alien name : <input  type=text name=aname>
-<br>
-<br>
-<input type="submit" name="add" value="Click">
-
-</form>
+	<form action="addAlien">
+		Enter your id: <input type=text name=aid><br><br>
+		Enter alien name : <input  type=text name=aname><br><br>
+		<input type="submit" name="add" value="Click">
+	</form>	
+	<hr>
+	<form action="getAlienSearch" method="get">
+		Enter your id to search Alien: <input type="text" name="aid"> <br>
+		<input type="submit">
+	</form>
+		
 
 </body>
 </html>
